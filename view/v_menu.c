@@ -6,6 +6,8 @@
 #include "v_funcionario.h"
 #include "v_fornecedor.h"
 #include "../model/m_locadora.h"
+#include "../model/m_categoria.h"
+#include "v_util.h"
 #include <stdio.h>
 
 int menuLocadora(void) {
@@ -21,11 +23,11 @@ int menuLocadora(void) {
         scanf("%d%*c", &i);
     } while ((i < 1) || (i > 4));
     if (i == 1) {
-        salvaOuAtualizaLocadora(criaLocadora());
+        salvarOuAtualizarLocadora(criaLocadora());
     } else if (i == 2) {
         exibeLocadora(obtemLocadoraDoDisco());
     } else if (i == 3) {
-        salvaOuAtualizaLocadora(criaLocadora());
+        salvarOuAtualizarLocadora(criaLocadora());
     }
     return i == 4 ? 0 : i;
 }
@@ -80,8 +82,19 @@ int menuCategoria(void) {
         scanf("%d%*c", &i);
     } while ((i < 1) || (i > 5));
     if (i == 1) {
-        exibeCategoria(criaCategoria());
+        salvarCategoria(criaCategoria());
+    } else if (i == 2) {
+        listarCategorias();
+    } else if (i == 3){
+        int codigo;
+        criaCodigo(" da categoria que deseja atualizar", &codigo);
+        atualizarCategoria(criaCategoria(), codigo);
+    } else if (i == 4){
+        int codigo;
+        criaCodigo(" da categoria que deseja deletar", &codigo);
+        deletarCategoriaPorCodigo(codigo);
     }
+
     return i == 5 ? 0 : i;
 }
 

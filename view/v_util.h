@@ -27,7 +27,7 @@ void criaNomeDoResponsavel(char *nome);
 
 void criaTelefonedoResponsavel(char *telefone);
 
-void criaCodigo(int *codigo);
+void criaCodigo(char *string, int *codigo);
 
 void criaCpf(char *cpf);
 

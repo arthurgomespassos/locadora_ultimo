@@ -3,7 +3,7 @@
 #include "m_locadora.h"
 #include "m_util.h"
 
-void salvaOuAtualizaLocadora(Locadora locadora) {
+void salvarOuAtualizarLocadora(Locadora locadora) {
     FILE *fp = fopen(caminhoDosDados"locadora.bin", "wb");
     if (fp == NULL) {
         printf("Erro em salvarOuAtualizarLocadora");

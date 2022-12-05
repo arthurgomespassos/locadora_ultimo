@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-void limpa_buffer_de_teclado(void){
+void limpa_buffer_de_teclado(void) {
     int c = 0;
     while ((c = getchar()) != '\n' && c != EOF) {}
 }
@@ -24,14 +24,14 @@ void criaRazaoSocial(char *razaoSocial) {
 
 void criaInscricaoEstadual(char *inscricaoEstadual) {
     printf("Digite a inscricao estadual: ");
-    fgets(inscricaoEstadual, 19 , stdin);
+    fgets(inscricaoEstadual, 19, stdin);
     limpaString(inscricaoEstadual);
     limpa_buffer_de_teclado();
 }
 
 void criaCnpj(char *cnpj) {
     printf("Digite o Cnpj: ");
-    fgets(cnpj, 19 , stdin);
+    fgets(cnpj, 19, stdin);
     limpaString(cnpj);
     limpa_buffer_de_teclado();
 }
@@ -69,7 +69,7 @@ Endereco criaEndereco() {
 
 void criaTelefone(char *telefone) {
     printf("Digite o telefone: ");
-    fgets(telefone, 16 , stdin);
+    fgets(telefone, 16, stdin);
     limpaString(telefone);
     limpa_buffer_de_teclado();
 }
@@ -91,20 +91,20 @@ void criaNomeDoResponsavel(char *nome) {
 
 void criaTelefonedoResponsavel(char *telefone) {
     printf("Digite o telefone do responsavel: ");
-    fgets(telefone, 16 ,stdin);
+    fgets(telefone, 16, stdin);
     limpaString(telefone);
     limpa_buffer_de_teclado();
 }
 
-void criaCodigo(int *codigo) {
-    printf("Digite o codigo: ");
+void criaCodigo(char *string, int *codigo) {
+    printf("Digite o codigo%s:", string);
     scanf("%d%*c", codigo);
     limpa_buffer_de_teclado();
 }
 
 void criaCpf(char *cpf) {
     printf("Digite o cpf: ");
-    fgets(cpf, 15 ,stdin);
+    fgets(cpf, 15, stdin);
     limpaString(cpf);
     limpa_buffer_de_teclado();
 }
@@ -118,7 +118,7 @@ void criaSexo(char *sexo) {
 
 void criaEstadoCivil(char *estadoCivil) {
     printf("Digite o estado civil: ");
-    fgets(estadoCivil, 11 ,stdin);
+    fgets(estadoCivil, 11, stdin);
     limpaString(estadoCivil);
     limpa_buffer_de_teclado();
 }
