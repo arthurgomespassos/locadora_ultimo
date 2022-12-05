@@ -1,0 +1,1 @@
+É nesse diretório que o arquivo xml será exportado pela aplicação

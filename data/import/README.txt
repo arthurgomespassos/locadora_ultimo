@@ -1,0 +1,1 @@
+É nesse diretório que o arquivo xml deverá estar quando os seus dados forem importados para dentro da aplicação

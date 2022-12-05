@@ -1,7 +1,12 @@
 #include "v_menu.h"
 #include "../entities/types.h"
+#include "v_locadora.h"
+#include "v_cliente.h"
+#include "v_categoria.h"
+#include "v_funcionario.h"
+#include "v_fornecedor.h"
+#include "../model/m_locadora.h"
 #include <stdio.h>
-
 
 int menuLocadora(void) {
     int i;
@@ -12,17 +17,15 @@ int menuLocadora(void) {
         printf("(2)Exibir\n");
         printf("(3)Atualizar\n");
         printf("(4)Sair\n");
+
         scanf("%d%*c", &i);
     } while ((i < 1) || (i > 4));
     if (i == 1) {
-        exibeLocadora(criaLocadora());
+        salvaOuAtualizaLocadora(criaLocadora());
     } else if (i == 2) {
-//        exibeLocadora(getLocadoraDisco());
+        exibeLocadora(obtemLocadoraDoDisco());
     } else if (i == 3) {
-//        printf("Dados Antigos da locadora:\n");
-//        exibeLocadora(getLocadoraDisco());
-//        printf("Digite os novos dados da locadora:\n");
-//        setLocadoraNoDisco(criaLocadora());
+        salvaOuAtualizaLocadora(criaLocadora());
     }
     return i == 4 ? 0 : i;
 }
@@ -37,10 +40,11 @@ int menuCliente(void) {
         printf("(3)Atualizar\n");
         printf("(4)Deletar\n");
         printf("(5)Sair\n");
+
         scanf("%d%*c", &i);
     } while ((i < 1) || (i > 5));
     if (i == 1) {
-//        exibeCliente(criaCliente());
+        exibeCliente(criaCliente());
     }
 
     return i == 5 ? 0 : i;
@@ -56,6 +60,7 @@ int menuFilme(void) {
         printf("(3)Atualizar\n");
         printf("(4)Deletar\n");
         printf("(5)Sair\n");
+
         scanf("%d%*c", &i);
     } while ((i < 1) || (i > 5));
     return i == 5 ? 0 : i;
@@ -71,10 +76,11 @@ int menuCategoria(void) {
         printf("(3)Atualizar\n");
         printf("(4)Deletar\n");
         printf("(5)Sair\n");
+
         scanf("%d%*c", &i);
     } while ((i < 1) || (i > 5));
     if (i == 1) {
-//        exibeCategoria(criaCategoria());
+        exibeCategoria(criaCategoria());
     }
     return i == 5 ? 0 : i;
 }
@@ -89,10 +95,11 @@ int menuFuncionario(void) {
         printf("(3)Atualizar\n");
         printf("(4)Deletar\n");
         printf("(5)Sair\n");
+
         scanf("%d%*c", &i);
     } while ((i < 1) || (i > 6));
     if (i == 1) {
-//        exibeFunionario(criaFuncionario());
+        exibeFunionario(criaFuncionario());
     }
     return i == 5 ? 0 : i;
 }
@@ -107,10 +114,11 @@ int menuFornecedor(void) {
         printf("(3)Atualizar\n");
         printf("(4)Deletar\n");
         printf("(5)Sair\n");
+
         scanf("%d%*c", &i);
     } while ((i < 1) || (i > 6));
     if (i == 1) {
-//        exibeFornecedor(criaFornecedor());
+        exibeFornecedor(criaFornecedor());
     }
     return i == 5 ? 0 : i;
 }
@@ -128,6 +136,7 @@ int menuPrincipal(void) {
         printf("(6)Fornecedor\n");
         printf("(7)Salvar\n");
         printf("(8)Sair\n");
+
         scanf("%d%*c", &i);
     } while ((i < 1) || (i > 8));
     return i == 8 ? 0 : i;

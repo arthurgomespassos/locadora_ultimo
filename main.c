@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "view/v_menu.h"
+#include "model/m_init.h"
 
 // nomes de arquivos serão snake_case
 // nomes de funções serão camelCase
 // embora o código seja em portugues, as palavras: get, set, is, contains serão usadas também
 // talvez as funções que capturem input do usuário estejam capturando também o caractere \n ao fim do input sendo necessário remover esse caractere logo após o input e depois fazer um trim do input também removendo \n e espaçõs do inicio e fim dos inputs
 int main() {
+    init();
+
     int op;
     while (true) {
         op = menuPrincipal();

@@ -1,6 +1,12 @@
 #ifndef LOCADORA_ULTIMO_V_UTIL_H
 #define LOCADORA_ULTIMO_V_UTIL_H
 
+#include "../entities/types.h"
+
+// essa função teve de ser criada para limpar o buffer de teclado pois o setbuf(stdin, NULL), estava dando erro em alguns casos
+// essa função consome o buffer de teclado e zera o buffer.
+void limpa_buffer_de_teclado(void);
+
 void criaNome(char *string, char *nome);
 
 void criaRazaoSocial(char *razaoSocial);
