@@ -8,6 +8,7 @@
 #include "../model/m_locadora.h"
 #include "../model/m_categoria.h"
 #include "v_util.h"
+#include "../model/m_cliente.h"
 #include <stdio.h>
 
 int menuLocadora(void) {
@@ -46,7 +47,23 @@ int menuCliente(void) {
         scanf("%d%*c", &i);
     } while ((i < 1) || (i > 5));
     if (i == 1) {
-        exibeCliente(criaCliente());
+        salvarCliente(criaCliente());
+    } else if (i == 2) {
+        int codigoInicial;
+        criaCodigo(" inicial para a busca de clientes", &codigoInicial);
+        int codigoFinal;
+        criaCodigo(" final para a busca de clientes", &codigoFinal);
+        char sexo;
+        criaSexo(&sexo);
+        listarClientes(codigoInicial, codigoFinal, sexo);
+    } else if (i == 3){
+        int codigo;
+        criaCodigo(" da cliente que deseja atualizar", &codigo);
+        atualizarCliente(criaCliente(), codigo);
+    } else if (i == 4){
+        int codigo;
+        criaCodigo(" da cliente que deseja deletar", &codigo);
+        deletarClientePorCodigo(codigo);
     }
 
     return i == 5 ? 0 : i;
@@ -85,11 +102,11 @@ int menuCategoria(void) {
         salvarCategoria(criaCategoria());
     } else if (i == 2) {
         listarCategorias();
-    } else if (i == 3){
+    } else if (i == 3) {
         int codigo;
         criaCodigo(" da categoria que deseja atualizar", &codigo);
         atualizarCategoria(criaCategoria(), codigo);
-    } else if (i == 4){
+    } else if (i == 4) {
         int codigo;
         criaCodigo(" da categoria que deseja deletar", &codigo);
         deletarCategoriaPorCodigo(codigo);

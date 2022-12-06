@@ -21,7 +21,7 @@ void salvarCategoria(Categoria categoria) {
 Categoria *obterCategorias(void) {
     FILE *fp = fopen(caminhoDosDados"categoria.bin", "rb");
     if (fp == NULL) {
-        printf("Erro em listarCategoriaPorFaixaDeCodigo");
+        printf("Erro em obterCategorias");
         exit(1);
     }
 
