@@ -5,6 +5,9 @@
 
 void exibeFornecedor(Fornecedor fornecedor);
 
-Fornecedor criaFornecedor(void) ;
+Fornecedor criaFornecedor(void);
+
+// exibe todos os forncedores ativos do sistema
+void listarFornecedores(void);
 
 #endif //LOCADORA_ULTIMO_V_FORNECEDOR_H

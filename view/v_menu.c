@@ -10,6 +10,7 @@
 #include "v_util.h"
 #include "../model/m_cliente.h"
 #include "../model/m_funcionario.h"
+#include "../model/m_fornecedor.h"
 #include <stdio.h>
 
 int menuLocadora(void) {
@@ -57,11 +58,11 @@ int menuCliente(void) {
         char sexo;
         criaSexo(&sexo);
         listarClientes(codigoInicial, codigoFinal, sexo);
-    } else if (i == 3){
+    } else if (i == 3) {
         int codigo;
         criaCodigo(" da cliente que deseja atualizar", &codigo);
         atualizarCliente(criaCliente(), codigo);
-    } else if (i == 4){
+    } else if (i == 4) {
         int codigo;
         criaCodigo(" da cliente que deseja deletar", &codigo);
         deletarClientePorCodigo(codigo);
@@ -133,7 +134,7 @@ int menuFuncionario(void) {
         salvarFuncionario(criaFuncionario());
     } else if (i == 2) {
         listarFuncionarios();
-    } else if (i == 3){
+    } else if (i == 3) {
         int codigo;
         criaCodigo(" do funcionario que deseja atualizar", &codigo);
         Funcionario funcionario = criaFuncionario();
@@ -160,8 +161,22 @@ int menuFornecedor(void) {
         scanf("%d%*c", &i);
     } while ((i < 1) || (i > 6));
     if (i == 1) {
-        exibeFornecedor(criaFornecedor());
+        salvarFornecedor(criaFornecedor());
+    } else if (i == 2) {
+        listarFornecedores();
+    } else if (i == 3) {
+        int codigo;
+        criaCodigo(" do fornecedor que deseja atualizar", &codigo);
+        Fornecedor fornecedor = criaFornecedor();
+        atualizarFornecedor(fornecedor, codigo);
+    } else if (i == 4) {
+        int codigo;
+        criaCodigo(" do fornecedor que deseja deletar", &codigo);
+        deletarFornecedorPorCodigo(codigo);
     }
+
+
+
     return i == 5 ? 0 : i;
 }
 
