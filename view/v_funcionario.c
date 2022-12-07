@@ -1,6 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "v_funcionario.h"
 #include "v_util.h"
+#include "../model/m_util.h"
+#include "../model/m_funcionario.h"
 
 void exibeFunionario(Funcionario funcionario) {
     printf("\nDados do Funcionario:\n");
@@ -16,13 +19,27 @@ Funcionario criaFuncionario(void) {
     Funcionario funcionario;
 
     printf("\nDigite os dados do Funcionario...\n");
-    funcionario.codigo = 1; // TODO getUltimoCliente().codigo + 1;
-    criaNome("" ,funcionario.nome);
+    funcionario.codigo = 1; // este é um valor sem importancia que só existe na criação da categoria para evitar comportamentos inesperados
+    criaNome("", funcionario.nome);
     criaCargo(funcionario.cargo);
-    criaEndereco(funcionario.endereco);
+    funcionario.endereco = criaEndereco(funcionario.endereco);
     criaTelefone(funcionario.telefone);
     criaEmail(funcionario.email);
     funcionario.ativo = true;
 
     return funcionario;
+}
+
+void listarFuncionarios(void) {
+    int funcionarioQtd = obterQuantidadeDeTabela("funcionario");
+    Funcionario *funcionarios = obterFuncionarios();
+
+    for (int i = 0; i < funcionarioQtd; i++) {
+        if (!funcionarios[i].ativo) continue;
+
+        exibeFunionario(funcionarios[i]);
+    }
+
+    free(funcionarios);
+    funcionarios = NULL;
 }

@@ -9,6 +9,7 @@
 #include "../model/m_categoria.h"
 #include "v_util.h"
 #include "../model/m_cliente.h"
+#include "../model/m_funcionario.h"
 #include <stdio.h>
 
 int menuLocadora(void) {
@@ -129,7 +130,18 @@ int menuFuncionario(void) {
         scanf("%d%*c", &i);
     } while ((i < 1) || (i > 6));
     if (i == 1) {
-        exibeFunionario(criaFuncionario());
+        salvarFuncionario(criaFuncionario());
+    } else if (i == 2) {
+        listarFuncionarios();
+    } else if (i == 3){
+        int codigo;
+        criaCodigo(" do funcionario que deseja atualizar", &codigo);
+        Funcionario funcionario = criaFuncionario();
+        atualizarFuncionario(funcionario, codigo);
+    } else if (i == 4) {
+        int codigo;
+        criaCodigo(" do funcionario que deseja deletar", &codigo);
+        deletarFuncionarioPorCodigo(codigo);
     }
     return i == 5 ? 0 : i;
 }
@@ -159,7 +171,7 @@ int menuPrincipal(void) {
         printf("\nMENU PRINCIPAL:\n");
         printf("Escolha uma Opcao:\n");
         printf("(1)Locadora\n");
-        printf("(2)Cliente\n");
+        printf("(2)Funcionario\n");
         printf("(3)Filme\n");
         printf("(4)Categoria\n");
         printf("(5)Funcionario\n");

@@ -9,7 +9,7 @@ void salvarCliente(Cliente cliente);
 // obtém uma lista de todos os clientes da aplicação
 Cliente *obterClientes(void);
 
-// atualiza o cliente do codigo especificado com os dados do cliente passado
+// atualiza o funcionario do codigo especificado com os dados do funcionario passado
 void atualizarCliente(Cliente cliente, int codigo);
 
 // desabilita o cliente que tiver código igual ao código passado
