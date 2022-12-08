@@ -21,7 +21,7 @@ Fornecedor criaFornecedor(void) {
     Fornecedor fornecedor;
 
     printf("\nDigite os dados do fornecedor...\n");
-    fornecedor.codigo = 1; // TODO mudar depois
+    fornecedor.codigo = 1; // este é um valor sem importancia que só existe para evitar comportamentos inesperados
     criaNomeFantasia(fornecedor.nomeFantasia);
     criaInscricaoEstadual(fornecedor.inscricaoEstadual);
     criaRazaoSocial(fornecedor.razaoSocial);

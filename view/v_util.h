@@ -81,7 +81,11 @@ void exibeLingua(char *lingua);
 
 void criaValorLocacao(float *valorLocacao);
 
+void criaValor(char *string,float *valor);
+
 void exibeValorLocacao(float valorLocacao);
+
+void exibeValor(char *string,float valor);
 
 void criaCargo(char *cargo);
 

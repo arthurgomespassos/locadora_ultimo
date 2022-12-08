@@ -16,7 +16,7 @@ Categoria criaCategoria(void) {
     Categoria categoria;
 
     printf("\nDigite os dados da Categoria...\n");
-    categoria.codigo = 1; // este é um valor sem importancia que só existe na criação da categoria para evitar comportamentos inesperados
+    categoria.codigo = 1; // este é um valor sem importancia que só existe para evitar comportamentos inesperados
     criaDescricao(categoria.descricao);
     criaValorLocacao(&categoria.valorLocacao);
     categoria.ativo = true;

@@ -157,6 +157,12 @@ void criaValorLocacao(float *valorLocacao) {
     limpa_buffer_de_teclado();
 }
 
+void criaValor(char *string, float *valor) {
+    printf("Valor%s: ", string);
+    scanf("%f%*c", valor);
+    limpa_buffer_de_teclado();
+}
+
 void criaCargo(char *cargo) {
     printf("Cargo: ");
     fgets(cargo, 30, stdin);
@@ -245,6 +251,10 @@ void exibeLingua(char *lingua) {
 
 void exibeValorLocacao(float valorLocacao) {
     printf("Valor da locacao: %f\n", valorLocacao);
+}
+
+void exibeValor(char *string, float valor) {
+    printf("valor%s: %f\n", string, valor);
 }
 
 void exibeCargo(char *cargo) {

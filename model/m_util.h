@@ -9,6 +9,9 @@
 // caminho relativo para a pasta que contém os dados binarios do programa mas não tem o caractere '/' no seu final
 #define caminhoDosDadosSemBarraNoFinal "../data"
 
+// caminho de exportacao do xml
+#define caminhoCompletoDeExportacaoDoXml caminhoDosDados"export/dados-exportados.xml"
+
 // retorna true se arquivo existir e false se não existir
 bool isArquivoExiste(char *caminhoCompletoDoArquivo);
 

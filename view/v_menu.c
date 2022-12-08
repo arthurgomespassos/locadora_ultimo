@@ -11,6 +11,8 @@
 #include "../model/m_cliente.h"
 #include "../model/m_funcionario.h"
 #include "../model/m_fornecedor.h"
+#include "v_filme.h"
+#include "../model/m_filme.h"
 #include <stdio.h>
 
 int menuLocadora(void) {
@@ -45,7 +47,6 @@ int menuCliente(void) {
         printf("(3)Atualizar\n");
         printf("(4)Deletar\n");
         printf("(5)Sair\n");
-
         scanf("%d%*c", &i);
     } while ((i < 1) || (i > 5));
     if (i == 1) {
@@ -81,9 +82,27 @@ int menuFilme(void) {
         printf("(3)Atualizar\n");
         printf("(4)Deletar\n");
         printf("(5)Sair\n");
-
         scanf("%d%*c", &i);
+
     } while ((i < 1) || (i > 5));
+    if (i == 1) {
+        salvarFilme(criaFilme());
+    } else if (i == 2) {
+        int codigoInicial;
+        criaCodigo(" inicial para a busca de filmes", &codigoInicial);
+        int codigoFinal;
+        criaCodigo(" final para a busca de filmes", &codigoFinal);
+        listarFilmes(codigoInicial, codigoFinal);
+    } else if (i == 3) {
+        int codigo;
+        criaCodigo(" do filme que deseja atualizar", &codigo);
+        atualizarFilme(criaFilme(), codigo);
+    } else if (i == 4) {
+        int codigo;
+        criaCodigo(" do filme que deseja deletar", &codigo);
+        deletarFilmePorCodigo(codigo);
+    }
+
     return i == 5 ? 0 : i;
 }
 
@@ -174,9 +193,6 @@ int menuFornecedor(void) {
         criaCodigo(" do fornecedor que deseja deletar", &codigo);
         deletarFornecedorPorCodigo(codigo);
     }
-
-
-
     return i == 5 ? 0 : i;
 }
 
@@ -186,15 +202,17 @@ int menuPrincipal(void) {
         printf("\nMENU PRINCIPAL:\n");
         printf("Escolha uma Opcao:\n");
         printf("(1)Locadora\n");
-        printf("(2)Funcionario\n");
+        printf("(2)Cliente\n");
         printf("(3)Filme\n");
         printf("(4)Categoria\n");
         printf("(5)Funcionario\n");
         printf("(6)Fornecedor\n");
-        printf("(7)Salvar\n");
-        printf("(8)Sair\n");
+        printf("(7)Resetar Aplicação\n");
+        printf("(8)Exportar dados\n");
+        printf("(9)Importar dados\n");
+        printf("(10)Sair\n");
 
         scanf("%d%*c", &i);
-    } while ((i < 1) || (i > 8));
-    return i == 8 ? 0 : i;
+    } while ((i < 1) || (i > 10));
+    return i == 10 ? 0 : i;
 }

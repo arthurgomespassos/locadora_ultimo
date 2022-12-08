@@ -24,7 +24,7 @@ Cliente criaCliente(void) {
     Cliente cliente;
 
     printf("\nDigite os dados do Cliente...\n");
-    cliente.codigo = 1; // este é um valor sem importancia que só existe na criação da categoria para evitar comportamentos inesperados
+    cliente.codigo = 1; // este é um valor sem importancia que só existe para evitar comportamentos inesperados
     criaNome("", cliente.nome);
     cliente.endereco = criaEndereco();
     criaCpf(cliente.CPF);

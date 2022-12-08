@@ -20,6 +20,17 @@ int main() {
         else if (op == 4) menuCategoria();
         else if (op == 5) menuFuncionario();
         else if (op == 6) menuFornecedor();
+        else if (op == 7) {
+            // resetar aplicação
+            deletaTodosOsArquivosBinarios();
+            init();
+        }
+        else if (op == 8) {
+            // exportar dados para xml
+
+        }
+
+
     }
     return 0;
 }

@@ -29,4 +29,6 @@ Locadora obtemLocadoraDoDisco(void){
 
     fclose(fp);
     fp = NULL;
+
+    return locadora;
 };

@@ -19,7 +19,7 @@ Funcionario criaFuncionario(void) {
     Funcionario funcionario;
 
     printf("\nDigite os dados do Funcionario...\n");
-    funcionario.codigo = 1; // este é um valor sem importancia que só existe na criação da categoria para evitar comportamentos inesperados
+    funcionario.codigo = 1; // este é um valor sem importancia que só existe para evitar comportamentos inesperados
     criaNome("", funcionario.nome);
     criaCargo(funcionario.cargo);
     funcionario.endereco = criaEndereco(funcionario.endereco);

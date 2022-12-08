@@ -73,6 +73,11 @@ struct _Filme{
     int exemplares;
     // portugues dublado OU ingles legendado
     char lingua[20];
+    float impostoPorUnidade;
+    float fretePorUnidade;
+    float custoPorUnidade;
+    float precoTotalPorUnidade;
+    float valorDeLocacaoPorUnidade;
     bool ativo;
 };
 typedef struct _Filme Filme;
