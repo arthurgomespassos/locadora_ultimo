@@ -7,15 +7,17 @@ bool precisaLimparInicioDaString(char *str) {
 }
 
 bool precisaLimparFimDaString(char *str) {
-    int posicaoDoUltimoCaractere = (int)strlen(str) - 1;
-    if (str[posicaoDoUltimoCaractere] == '\n' || str[posicaoDoUltimoCaractere] == '\t' || str[posicaoDoUltimoCaractere] == ' ') return true;
+    int posicaoDoUltimoCaractere = (int) strlen(str) - 1;
+    if (str[posicaoDoUltimoCaractere] == '\n' || str[posicaoDoUltimoCaractere] == '\t' ||
+        str[posicaoDoUltimoCaractere] == ' ')
+        return true;
     return false;
 }
 
 void limpaString(char *str) {
     // limpa o início da string
     while (precisaLimparInicioDaString(str)) {
-        int posicaoDoCaractereTerminador = (int)strlen(str);
+        int posicaoDoCaractereTerminador = (int) strlen(str);
         char novaString[1000] = "";
 
         for (int i = 1; i <= posicaoDoCaractereTerminador; i++)
@@ -26,7 +28,7 @@ void limpaString(char *str) {
 
     // limpa o fim da string
     while (precisaLimparFimDaString(str)) {
-        int posicaoDoCaractereASerLimpado = (int)strlen(str) - 1;
+        int posicaoDoCaractereASerLimpado = (int) strlen(str) - 1;
         str[posicaoDoCaractereASerLimpado] = '\0';
     }
 }

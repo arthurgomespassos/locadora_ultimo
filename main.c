@@ -2,6 +2,9 @@
 #include <stdbool.h>
 #include "view/v_menu.h"
 #include "model/m_init.h"
+#include "string_utils/string_util.h"
+#include "view/v_util.h"
+#include "model/m_xml.h"
 
 // nomes de arquivos serão snake_case
 // nomes de funções serão camelCase
@@ -24,13 +27,19 @@ int main() {
             // resetar aplicação
             deletaTodosOsArquivosBinarios();
             init();
-        }
-        else if (op == 8) {
+        } else if (op == 8) {
             // exportar dados para xml
 
+            char opcoes[100] = "";
+            printf("O programa tem atualmente as seguines tabelas: locadora, cliente, filme, categoria, funcionario e fornecedor.\n");
+            printf("Digite separado por espaços, apenas com caracteres minusculos, quais das tabelas você quer exportar os dados.");
+            fgets(opcoes, 100, stdin);
+            limpaString(opcoes);
+            limpa_buffer_de_teclado();
+
+            exportarXml(opcoes);
         }
-
-
     }
+
     return 0;
 }
